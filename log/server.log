@@ -1,0 +1,187 @@
+08/31/2024 07:52:56 AM Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+08/31/2024 07:52:56 AM See model summary at: .../results/
+08/31/2024 07:56:55 AM Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+08/31/2024 07:56:55 AM See model summary at: .../results/
+08/31/2024 07:58:17 AM Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+08/31/2024 07:58:17 AM See model summary at: .../results/
+08/31/2024 03:04:18 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:04:18 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:04:19 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:04:19 AM See model summary at: .../results/
+08/31/2024 03:04:19 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 01:52:08 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 01:52:08 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 01:52:08 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 01:52:08 PM See model summary at: .../results/
+08/31/2024 01:52:08 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 01:53:03 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 01:53:03 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 01:53:03 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 01:53:03 PM See model summary at: .../results/
+08/31/2024 01:53:04 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 02:04:36 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 02:04:36 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 02:04:37 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 02:04:37 PM See model summary at: .../results/
+08/31/2024 02:04:37 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 02:11:24 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 02:11:24 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 02:11:24 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 02:11:24 PM See model summary at: .../results/
+08/31/2024 02:11:24 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 02:13:08 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 02:13:08 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 02:13:08 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 02:13:08 PM See model summary at: .../results/
+08/31/2024 02:13:09 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 02:20:30 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 02:20:30 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 02:20:30 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 02:20:30 PM See model summary at: .../results/
+08/31/2024 02:20:30 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 02:46:51 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 02:46:51 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 02:46:51 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 02:46:51 PM See model summary at: .../results/
+08/31/2024 02:46:51 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 02:56:31 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 02:56:31 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 02:56:31 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 02:56:31 PM See model summary at: .../results/
+08/31/2024 02:57:50 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 02:57:50 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 02:57:50 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 02:57:50 PM See model summary at: .../results/
+08/31/2024 03:00:22 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:00:22 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:00:22 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:00:22 PM See model summary at: .../results/
+08/31/2024 03:02:14 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:02:14 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:02:14 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:02:14 PM See model summary at: .../results/
+08/31/2024 03:02:14 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 03:28:23 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:28:23 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:28:23 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:28:23 PM See model summary at: .../results/
+08/31/2024 03:28:23 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 03:33:46 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:33:46 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:33:47 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:33:47 PM See model summary at: .../results/
+08/31/2024 03:33:47 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 03:35:49 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:35:49 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:35:49 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:35:49 PM See model summary at: .../results/
+08/31/2024 03:35:49 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 03:42:17 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:42:17 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:42:18 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:42:18 PM See model summary at: .../results/
+08/31/2024 03:42:18 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 03:46:37 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:46:37 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:46:37 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:46:37 PM See model summary at: .../results/
+08/31/2024 03:46:37 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+08/31/2024 03:53:11 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+08/31/2024 03:53:11 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+08/31/2024 03:53:12 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+08/31/2024 03:53:12 PM See model summary at: .../results/
+08/31/2024 03:53:12 PM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+04/09/2025 03:09:16 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+04/09/2025 03:09:16 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+04/09/2025 03:09:16 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+04/09/2025 03:09:16 AM See model summary at: .../results/
+04/09/2025 03:12:31 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+04/09/2025 03:12:31 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+04/09/2025 03:12:32 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+04/09/2025 03:12:32 AM See model summary at: .../results/
+04/09/2025 03:12:32 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+04/09/2025 03:14:31 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+04/09/2025 03:14:31 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\backend.py:6642: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+04/09/2025 03:14:31 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+04/09/2025 03:14:31 AM See model summary at: .../results/
+04/09/2025 03:14:31 AM From C:\Users\jyoti\anaconda3\envs\save\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
