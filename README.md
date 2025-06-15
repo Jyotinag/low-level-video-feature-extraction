@@ -1,105 +1,122 @@
-# Video Feature Extraction for Cybersickness Analysis in VR
+# Video Feature Extraction for VR Gameplay Analysis
 
-This repository provides the methodology and implementation details for extracting low-level video features from VR gameplay data, specifically tailored to study and predict cybersickness. The extracted features are designed to be interpretable and correlated with motion-induced discomfort in virtual environments.
+This repository contains tools and scripts for extracting low-level video features from VR gameplay data to support cybersickness prediction using objective visual features.
 
-## Dataset Overview
+## Overview
 
-We used two datasets:
-- **VRWalking Dataset**: VR gameplay was recorded at **60 FPS** using OBS Studio, focusing on left-eye video frames.
-- **SET Dataset**: Gameplay recorded at **25 FPS**.
+The project focuses on extracting 11 interpretable video features from VR video data, downsampled to 25 FPS to maintain consistency across datasets (VRWalking and SET). These features are selected based on their relevance to motion, brightness, color, and structural characteristics—all of which are known to influence cybersickness.
 
-To ensure consistency, we **downsampled VRWalking videos to 25 FPS** by randomly selecting 25 frames from each 60-frame window.
+### Key Features Extracted
+
+1. **Optical Flow**  
+   Measures motion by calculating the pixel displacement between consecutive frames:
+   $$
+   V(x, y) = (\Delta x, \Delta y)
+   $$
+   $$
+   \text{Average Optical Flow} = \frac{1}{N} \sum_{i=1}^{N} \sqrt{(\Delta x_i)^2 + (\Delta y_i)^2}
+   $$
+
+2. **Histogram of Oriented Gradients (HOG)**  
+   Captures the gradient orientation and magnitude:
+   $$
+   G_x = I(x+1, y) - I(x-1, y), \quad G_y = I(x, y+1) - I(x, y-1)
+   $$
+   $$
+   |\mathbf{G}(x, y)| = \sqrt{G_x^2 + G_y^2}, \quad \theta(x, y) = \arctan\left(\frac{G_y}{G_x}\right)
+   $$
+
+3. **Color Histogram**  
+   Calculates pixel frequency for each color bin:
+   $$
+   H_c(b) = \sum_{(x, y)} \delta(I_c(x, y) - b)
+   $$
+
+4. **Edge Intensity**  
+   Uses the Sobel operator:
+   $$
+   G_x = \sum I(x+i, y+j) \cdot S_x(i, j), \quad G_y = \sum I(x+i, y+j) \cdot S_y(i, j)
+   $$
+   $$
+   |\mathbf{G}| = \sqrt{G_x^2 + G_y^2}
+   $$
+
+5. **Scene Cuts**  
+   Measures frame-wise changes to detect transitions:
+   $$
+   D(t) = \frac{1}{N} \sum_{(x, y)} \left( I_t(x, y) - I_{t+1}(x, y) \right)^2
+   $$
+   $$
+   \text{Scene Cut} = \begin{cases} 
+   1 & \text{if } D(t) > \tau \\
+   0 & \text{otherwise}
+   \end{cases}
+   $$
+
+6. **Temporal Smoothness**  
+   Measures pixel intensity consistency:
+   $$
+   S(t) = \frac{1}{N} \sum_{(x, y)} \left| I_t(x, y) - I_{t+1}(x, y) \right|
+   $$
+
+7. **Brightness Flicker**  
+   Measures temporal brightness variance:
+   $$
+   B(t) = \frac{1}{N} \sum_{(x, y)} I_t(x, y)
+   $$
+   $$
+   F(t) = |B(t) - B(t-1)|
+   $$
+
+8. **Spectral Entropy**  
+   Computed from the frequency domain:
+   $$
+   E = - \sum_{f} P(f) \log P(f)
+   $$
+
+9. **Spatial Frequency**  
+   Captures texture and detail:
+   $$
+   SF = \sqrt{\left( \frac{1}{N} \sum G_x^2 \right) + \left( \frac{1}{N} \sum G_y^2 \right)}
+   $$
+
+10. **Luminance and Contrast**  
+   Measures brightness and intensity contrast:
+   $$
+   L = \frac{1}{N} \sum_{(x, y)} I(x, y)
+   $$
+   $$
+   C = \frac{I_{\text{max}} - I_{\text{min}}}{I_{\text{max}} + I_{\text{min}}}
+   $$
+
+11. **Time Series**  
+   Timestamps are used to track temporal progression and session duration for participants.
 
 ---
 
-## Extracted Features
+## File Descriptions
 
-The following **11 features** were extracted from the VR videos. For multidimensional features (e.g., optical flow), we computed the **average across dimensions** to create a single representative value per frame or frame pair.
+### `process_video.ipynb`  
+Performs feature extraction on video files (`.mkv` or `.mp4`). This notebook processes video data frame-by-frame to extract motion, color, brightness, and structural cues.
 
-### 1. Optical Flow
-- **Purpose**: Measures motion intensity between consecutive frames.
-- **Computation**: Calculates displacement vectors \( (\Delta x, \Delta y) \) for each pixel and summarizes via average magnitude.
-- **Equation**:
-  \[
-  \text{Average Optical Flow} = \frac{1}{N} \sum_{i=1}^{N} \sqrt{(\Delta x_i)^2 + (\Delta y_i)^2}
-  \]
 
-### 2. Histogram of Oriented Gradients (HOG)
-- **Purpose**: Captures object shapes and contours via gradient orientation histograms.
-- **Computation**: Gradients are calculated and binned into histograms.
-- **Equation**:
-  \[
-  \theta(x, y) = \arctan\left(\frac{G_y}{G_x}\right)
-  \]
-
-### 3. Color Histogram
-- **Purpose**: Represents distribution of colors in the frame.
-- **Computation**: Counts pixel intensities per bin per color channel (R, G, B).
-
-### 4. Edge Intensity
-- **Purpose**: Measures strength of edges using Sobel filters.
-- **Computation**: Applies horizontal and vertical Sobel kernels and computes the gradient magnitude.
-
-### 5. Scene Cuts
-- **Purpose**: Detects transitions between different visual scenes.
-- **Computation**: Calculates mean squared difference between frames and applies a threshold.
-- **Threshold**: \( \tau = 0.4 \)
-
-### 6. Temporal Smoothness
-- **Purpose**: Measures consistency of motion or transitions.
-- **Computation**: Calculates frame-to-frame intensity difference.
-
-### 7. Brightness Flicker
-- **Purpose**: Measures fluctuation in brightness, which may cause discomfort.
-- **Computation**: Computes difference in average intensity over consecutive frames.
-
-### 8. Spectral Entropy
-- **Purpose**: Quantifies randomness in frequency domain.
-- **Computation**: Uses normalized power spectrum from Fourier Transform.
-- **Equation**:
-  \[
-  E = - \sum_{f} P(f) \log P(f)
-  \]
-
-### 9. Spatial Frequency
-- **Purpose**: Measures how often patterns repeat (level of detail).
-- **Computation**: Derived from gradient energies in the spatial domain.
-
-### 10. Luminance and Contrast
-- **Luminance**: Average brightness from grayscale image.
-- **Contrast**: Normalized intensity range:
-  \[
-  C = \frac{I_{\text{max}} - I_{\text{min}}}{I_{\text{max}} + I_{\text{min}}}
-  \]
-
-### 11. Time Series (Timestamps)
-- **Purpose**: Tracks time spent in simulation per participant.
-- **Use Case**: Useful for analyzing how duration affects cybersickness (FMS score).
-
----
-
-## References
-
-This work builds on prior research on cybersickness-related feature extraction:
-
-- Sanaei et al. (2024) – Optical Flow and Cybersickness Correlation.
-- Oh et al. (2022) – HOG Features and Visual Comfort.
-- So et al. (2007) – Impact of Color on Cybersickness.
-- Rahimi et al. (2018) – Scene Structure and Motion Effects.
-- Chang et al. (2013) – Scene Cuts and Rest Frames.
-- Palmisano et al. (2017) – Motion Smoothness and Vection.
-- Vasylevska et al. (2019) – Luminance, Contrast, and Discomfort.
+### `video_data_preprocess.py`  
+Processes already timestamped frames (e.g., extracted left-eye views or simulation recordings) and extracts features directly from image folders with associated metadata.
 
 ---
 
 ## Usage
 
-This repository provides Python scripts to extract and process the above features using standard video processing libraries (e.g., OpenCV, scikit-image). Each feature can be extracted independently and saved in a CSV for further analysis with cybersickness labels (e.g., FMS scores).
+### Requirements
 
-Please see `process.py` (to be added) for implementation details.
+- Python 3.8+
+- OpenCV
+- NumPy
+- SciPy
+- scikit-image
+- tqdm
+- Jupyter (for notebooks)
 
----
-
-## License
-
-This work is intended for academic research only. Please cite appropriately if used in publications.
+Install dependencies:
+```bash
+pip install -r requirements.txt
