@@ -1,122 +1,81 @@
-# Video Feature Extraction for VR Gameplay Analysis
+# Video Feature Extraction for VR Cybersickness Prediction
 
-This repository contains tools and scripts for extracting low-level video features from VR gameplay data to support cybersickness prediction using objective visual features.
+This repository contains code and methodology for extracting low-level video features from virtual reality (VR) gameplay data. These features are intended for use in cybersickness prediction models using datasets like **VRWalking** and **SET**.
+
+---
 
 ## Overview
 
-The project focuses on extracting 11 interpretable video features from VR video data, downsampled to 25 FPS to maintain consistency across datasets (VRWalking and SET). These features are selected based on their relevance to motion, brightness, color, and structural characteristics—all of which are known to influence cybersickness.
+We extract 11 video-based features from VR gameplay recordings to understand their correlation with cybersickness (measured by FMS scores). The videos were collected using OBS Studio, and the left-eye video stream was recorded. 
 
-### Key Features Extracted
-
-1. **Optical Flow**  
-   Measures motion by calculating the pixel displacement between consecutive frames:
-   $$
-   V(x, y) = (\Delta x, \Delta y)
-   $$
-   $$
-   \text{Average Optical Flow} = \frac{1}{N} \sum_{i=1}^{N} \sqrt{(\Delta x_i)^2 + (\Delta y_i)^2}
-   $$
-
-2. **Histogram of Oriented Gradients (HOG)**  
-   Captures the gradient orientation and magnitude:
-   $$
-   G_x = I(x+1, y) - I(x-1, y), \quad G_y = I(x, y+1) - I(x, y-1)
-   $$
-   $$
-   |\mathbf{G}(x, y)| = \sqrt{G_x^2 + G_y^2}, \quad \theta(x, y) = \arctan\left(\frac{G_y}{G_x}\right)
-   $$
-
-3. **Color Histogram**  
-   Calculates pixel frequency for each color bin:
-   $$
-   H_c(b) = \sum_{(x, y)} \delta(I_c(x, y) - b)
-   $$
-
-4. **Edge Intensity**  
-   Uses the Sobel operator:
-   $$
-   G_x = \sum I(x+i, y+j) \cdot S_x(i, j), \quad G_y = \sum I(x+i, y+j) \cdot S_y(i, j)
-   $$
-   $$
-   |\mathbf{G}| = \sqrt{G_x^2 + G_y^2}
-   $$
-
-5. **Scene Cuts**  
-   Measures frame-wise changes to detect transitions:
-   $$
-   D(t) = \frac{1}{N} \sum_{(x, y)} \left( I_t(x, y) - I_{t+1}(x, y) \right)^2
-   $$
-   $$
-   \text{Scene Cut} = \begin{cases} 
-   1 & \text{if } D(t) > \tau \\
-   0 & \text{otherwise}
-   \end{cases}
-   $$
-
-6. **Temporal Smoothness**  
-   Measures pixel intensity consistency:
-   $$
-   S(t) = \frac{1}{N} \sum_{(x, y)} \left| I_t(x, y) - I_{t+1}(x, y) \right|
-   $$
-
-7. **Brightness Flicker**  
-   Measures temporal brightness variance:
-   $$
-   B(t) = \frac{1}{N} \sum_{(x, y)} I_t(x, y)
-   $$
-   $$
-   F(t) = |B(t) - B(t-1)|
-   $$
-
-8. **Spectral Entropy**  
-   Computed from the frequency domain:
-   $$
-   E = - \sum_{f} P(f) \log P(f)
-   $$
-
-9. **Spatial Frequency**  
-   Captures texture and detail:
-   $$
-   SF = \sqrt{\left( \frac{1}{N} \sum G_x^2 \right) + \left( \frac{1}{N} \sum G_y^2 \right)}
-   $$
-
-10. **Luminance and Contrast**  
-   Measures brightness and intensity contrast:
-   $$
-   L = \frac{1}{N} \sum_{(x, y)} I(x, y)
-   $$
-   $$
-   C = \frac{I_{\text{max}} - I_{\text{min}}}{I_{\text{max}} + I_{\text{min}}}
-   $$
-
-11. **Time Series**  
-   Timestamps are used to track temporal progression and session duration for participants.
+- For the **VRWalking dataset**, videos were originally recorded at 60 FPS. We downsampled these to 25 FPS by randomly selecting 25 frames from each 60-frame chunk, to match the frame rate of the **SET dataset**, which was already at 25 FPS.
+- Features are extracted per frame or per frame pair and reduced to scalar values (e.g., by averaging across pixels or directions), making them interpretable and suitable for machine learning models.
 
 ---
 
-## File Descriptions
+## Scripts
 
-### `process_video.ipynb`  
-Performs feature extraction on video files (`.mkv` or `.mp4`). This notebook processes video data frame-by-frame to extract motion, color, brightness, and structural cues.
+### 1. `process_video.ipynb` & `parallel_process.ipynb`
 
+These Jupyter notebooks extract video features directly from `.mkv` or `.mp4` video files. They handle tasks like:
 
-### `video_data_preprocess.py`  
-Processes already timestamped frames (e.g., extracted left-eye views or simulation recordings) and extracts features directly from image folders with associated metadata.
+- Reading video frames
+- Computing features (optical flow, edge intensity, etc.)
+- Saving feature vectors in structured CSV format
+
+### 2. `video_data_preprocess.py`
+
+This script extracts features from **timestamped image frames** rather than full video files. It is used when frames are already extracted and labeled with precise timestamps.
 
 ---
 
-## Usage
+## Extracted Video Features
 
-### Requirements
+### 1. Optical Flow
+Measures the amount and direction of motion between consecutive frames. We calculate average motion magnitude over all pixels. High motion is often associated with increased cybersickness.
 
-- Python 3.8+
-- OpenCV
-- NumPy
-- SciPy
-- scikit-image
-- tqdm
-- Jupyter (for notebooks)
+### 2. Histogram of Oriented Gradients (HOG)
+Captures object shape and appearance by measuring edge orientations in small image patches. HOG can reveal visual clutter or background complexity, which may affect cybersickness.
 
-Install dependencies:
-```bash
-pip install -r requirements.txt
+### 3. Color Histogram
+Represents the distribution of pixel colors. This captures the color composition of the video, which can influence user comfort. For example, highly saturated or rapidly changing colors might induce discomfort.
+
+### 4. Edge Intensity
+Measures sharpness and the strength of object boundaries in a frame. Sudden or strong edges may correlate with scene complexity and potentially increase cybersickness.
+
+### 5. Scene Cuts
+Detects transitions between scenes based on differences between consecutive frames. These abrupt changes can interrupt visual flow and have an impact on comfort.
+
+### 6. Temporal Smoothness
+Quantifies how smoothly pixel values transition across frames. Lower temporal smoothness suggests jarring or abrupt changes, which can increase motion discomfort.
+
+### 7. Brightness Flicker
+Measures fluctuations in average brightness over time. Flickering brightness can strain the eyes and contribute to visual discomfort or cybersickness.
+
+### 8. Spectral Entropy
+Captures randomness or complexity in the frequency domain of a video frame. Higher entropy suggests more chaotic content, which may affect perceptual stability.
+
+### 9. Spatial Frequency
+Represents how often patterns or textures repeat across an image. High spatial frequency indicates high detail, which may either improve clarity or contribute to visual overload.
+
+### 10. Luminance and Contrast
+Luminance reflects overall brightness; contrast measures the difference between light and dark areas. Lower luminance and balanced contrast levels are generally more comfortable for viewers.
+
+### 11. Time Series
+Each frame is associated with a timestamp, allowing temporal alignment of video features with cybersickness scores. This also helps in modeling how sickness evolves over time.
+
+---
+
+## Citation
+
+If you use this code or feature extraction strategy, please cite the original sources and related works such as:
+
+- Sanaei et al., 2024 - Correlations between motion cues and cybersickness
+- Oh et al., 2022 - Background complexity and cybersickness
+- So et al., 2007 - Effects of color and visual variables on sickness
+- Rahimi et al., 2018 - Scene features and visual fatigue
+- Chang et al., 2013 - Scene breaks and motion sickness
+- Palmisano et al., 2017 - Smooth motion and vection
+- Vasylevska et al., 2019 - Lighting and VR comfort
+
+---
